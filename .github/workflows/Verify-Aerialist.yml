@@ -1,0 +1,14 @@
+name: Run Aerialist Default Tests
+run-name: Run Aerialist Default Tests
+on: workflow_dispatch
+
+jobs:
+    Run-Aerialist-Test:
+        runs-on: ubuntu-latest
+        container: skhatiri/aerialist
+        steps:
+            - name: Run Mission1 Test
+              run: python3 aerialist exec --test samples/tests/mission1.yaml
+            
+            - name: Run Manual1 Test
+              run: python3 aerialist exec --test samples/tests/manual1.yaml
